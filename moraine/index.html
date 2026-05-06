@@ -12,7 +12,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <!-- Fontshare (Pangram Pangram fonts, free for commercial) -->
-<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700,900,400i,500i,700i,900i&f[]=britney@400&f[]=telma@400,500,700&f[]=technor@400,500,600,700&f[]=murmure@400&f[]=supreme@300,400,500,700&f[]=satoshi@300,400,500,700,900&f[]=panchang@400,500,700&f[]=chillax@400,500,600,700&f[]=tanker@400&f[]=zodiak@400,700,400i&f[]=stardom@400&f[]=bonny@400&f[]=besley@400,500,700,400i&display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=boska@400,500,700,900&f[]=britney@400&f[]=telma@400,500,700&f[]=technor@400,500,600,700&display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&f[]=supreme@300,400,500,700&f[]=chillax@400,500,600,700&f[]=panchang@400,500,700&display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=murmure@400&f[]=tanker@400&f[]=zodiak@400,700&f[]=stardom@400&f[]=bonny@400&f[]=besley@400,500,700&display=swap">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Climate+Crisis&family=Italianno&family=Mademoiselle&family=Pinyon+Script&family=Fraunces:ital,opsz,wght@0,9..144,200..900;1,9..144,200..900&display=swap" rel="stylesheet">
@@ -57,8 +59,8 @@
   --hairline-strong:rgba(212,178,122,.32);
   --hairline-cool:rgba(232,229,221,.12);
 
-  --f-hero:'Boxing','Britney','Telma','Boska','Tanker',serif;
-  --f-display:'Britney','Telma','Boska','Boxing','Stardom',serif;
+  --f-hero:'Britney','Telma','Boska','Tanker',serif;
+  --f-display:'Britney','Telma','Boska','Stardom',serif;
   --f-statement:'Climate Crisis','Britney','Boska',sans-serif;
   --f-display-2:'Telma','Boska',serif;
   --f-display-3:'Panchang','Boska','Telma',sans-serif;
@@ -72,7 +74,7 @@
   --f-body:'Satoshi','Supreme','Chillax',sans-serif;
   --f-numbers:'Fraunces',serif;
   --f-num-stmt:'Murmure','Telma','Boska',serif;
-  --f-backdrop:'Anton','Boxing','Britney',sans-serif;
+  --f-backdrop:'Anton','Britney',sans-serif;
   --f-italic:'Boska','Zodiak',serif;
 
   --pad-section:clamp(40px,5vw,96px);
@@ -587,18 +589,18 @@ p{text-wrap:pretty}
   .nav-brand{font-size:13px;letter-spacing:.06em}
   .nav-link{display:none}
   .nav-cta{padding:8px 14px;font-size:11px}
-  /* Hero — mobile vertical hierarchy: caps > script > caps, no clipping */
-  .hero{padding:80px 12px 40px}
-  .hero::before{inset:60px 12px}
-  .hero-card{padding:18px 18px 28px;min-height:0;border-radius:24px}
+  /* Hero — short card, sandwich layout, no clipping */
+  .hero{padding:64px 12px 24px}
+  .hero::before{inset:40px 12px}
+  .hero-card{padding:16px 18px 20px;min-height:0;border-radius:24px}
   .hero-top{padding-bottom:16px;gap:16px}
   .hero-top-mark{font-size:24px}
   .hero-top-contact{font-size:9.5px;letter-spacing:.18em;gap:10px}
-  .hero-canvas{position:relative;padding:24px 0 16px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-  .hero-title{font-size:clamp(52px,15.5vw,86px);letter-spacing:-.025em;line-height:.95}
+  .hero-canvas{position:relative;padding:16px 0 12px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .hero-title{font-size:clamp(60px,17.5vw,98px);letter-spacing:-.025em;line-height:.95}
   .hero-title .stack{padding:2px 0}
-  /* Sandwich the gold script between FASHION and LUX via absolute centering on hero-canvas */
-  .hero-mademoiselle{font-size:clamp(200px,58vw,320px);transform:translate(-50%,-50%) scaleY(1.4);text-shadow:0 2px 16px rgba(212,178,122,.55),0 0 48px rgba(212,178,122,.22)}
+  /* Sandwich the gold script between FASHION and LUX — sized so whole word fits viewport */
+  .hero-mademoiselle{font-size:clamp(110px,32vw,170px);transform:translate(-50%,-50%) scaleY(1.5);text-shadow:0 2px 16px rgba(212,178,122,.55),0 0 48px rgba(212,178,122,.22)}
   .hero-foot{margin-top:36px;display:flex;flex-direction:column;gap:24px;align-items:stretch}
   .hero-foot-l{gap:14px}
   .hero-tier-2{font-size:18px;letter-spacing:.04em}
@@ -639,15 +641,32 @@ p{text-wrap:pretty}
   .statement-cc h2{font-size:clamp(64px,22vw,120px);width:100%;margin-left:0;transform:none}
   .statement-cc-eyebrow{font-size:10px}
   .statement-cc-sub{font-size:14px}
-  /* GB / Archive — silence the giant Pinyon letters on mobile (they're decorative excess) */
-  .gb{padding:60px 16px;overflow:hidden}
-  .gb-letter{display:none}
-  .gb-c{min-height:auto;padding:40px 0}
-  .gb-c-pill{font-size:11px;padding:10px 18px}
+  /* GB / Archive — clean stack with M+R as subtle decorative bg, properly bounded */
+  .gb{padding:60px 16px;overflow:hidden;display:block}
+  .gb-bay{padding:32px 0}
+  .gb-bay + .gb-bay{margin-top:0}
+  .gb-letter{font-size:clamp(160px,42vw,240px);line-height:.78;-webkit-text-stroke-width:2px;color:rgba(15,15,15,.10);position:absolute;pointer-events:none}
+  .gb-letter-g{top:-30px;right:-8%;left:auto;transform:none;transform-origin:bottom right;-webkit-text-stroke:2px var(--obsidian);color:transparent}
+  .gb-letter-b{bottom:-30px;left:-8%;right:auto;transform:none;transform-origin:top left;-webkit-text-stroke:2px var(--obsidian);color:transparent}
+  .gb-c{min-height:280px;padding:60px 0;position:relative;display:flex;align-items:center;justify-content:center}
+  .gb-c-pill{position:relative;left:auto;transform:none;font-size:11px;padding:10px 18px;display:inline-flex;align-self:center}
+  .gb-c-r{position:absolute;bottom:8px;right:0;font-size:11px}
   .gb-numeral{font-size:clamp(180px,60vw,360px)}
   .gb-c-piece{width:70%}
-  .gb-stat .num{font-size:clamp(72px,18vw,120px)}
-  .gb-bottom{font-size:18px}
+  .gb-stat{margin-top:18px}
+  .gb-stat .num{font-size:clamp(64px,18vw,100px);line-height:.95}
+  .gb-l .gb-eyebrow{font-size:11px;letter-spacing:.18em}
+  .gb-l .gb-meta{font-size:10px}
+  .gb-l .gb-body{font-size:13px;max-width:none}
+  .gb-bottom{font-size:18px;line-height:1.25}
+  .gb-r{min-height:auto;padding-top:32px;text-align:left;align-items:flex-start}
+  .gb-r-tabs{justify-content:flex-start;gap:18px;font-size:9.5px}
+  .gb-r-thumb{width:160px;height:160px;margin:24px 0}
+  .gb-r-arrows{margin:-92px 0 0;font-size:16px}
+  .gb-r-thumb-cap{font-size:12px}
+  .gb-r-stars{justify-content:flex-start;margin:24px 0}
+  .gb-r-bottom{font-size:22px;line-height:1.15}
+  .gb-r-bottom + p{font-size:12px}
   /* Veil */
   .veil{padding:60px 16px}
   .veil-grid{grid-template-columns:1fr;gap:16px}
@@ -664,9 +683,20 @@ p{text-wrap:pretty}
   .edmap-grid{grid-template-columns:repeat(20,1fr);gap:2px}
   .edmap-board{padding:14px}
   .edmap-legend{flex-direction:column;align-items:flex-start;gap:12px}
-  /* Inheritance */
-  .inh{padding:80px 16px}
-  .inh-quote{font-size:clamp(30px,10vw,56px);line-height:1.1;margin-bottom:48px}
+  /* Inheritance — single column, logbook stacks pages, smaller dial */
+  .inh{padding:60px 14px}
+  .inh-quote{font-size:clamp(28px,9vw,48px);line-height:1.12;margin-bottom:48px;max-width:none}
+  .inh-quote .strong{font-size:1.2em;display:inline-block;line-height:.95}
+  .inh-grid{grid-template-columns:1fr;gap:32px}
+  .inh-text{gap:16px}
+  .inh-text h3{font-size:clamp(24px,7vw,32px)}
+  .inh-text h3 em{font-size:1.15em}
+  .logbook{aspect-ratio:auto}
+  .logbook::before{display:none}
+  .lbpage{position:relative;width:100%;padding:20px 22px}
+  .lbpage.l,.lbpage.r{left:auto;right:auto}
+  .lbpage.l{border-bottom:1px solid rgba(15,15,15,.18)}
+  .lbsig{font-size:28px;margin-top:18px}
   /* CTA */
   .cta{padding:80px 16px 60px}
   .cta h2{font-size:clamp(48px,16vw,100px)}
@@ -676,7 +706,7 @@ p{text-wrap:pretty}
   .cta-form button{width:100%;justify-content:center;padding:16px 20px}
   /* Footer */
   .ftr{padding:60px 16px 32px}
-  .ftr-mark{font-size:clamp(54px,22vw,120px)}
+  .ftr-mark{font-size:clamp(40px,16vw,80px);letter-spacing:-.02em;line-height:1}
   .ftr-cols{grid-template-columns:1fr 1fr;gap:24px}
   .ftr-bottom{flex-direction:column;align-items:flex-start;gap:8px;font-size:8.5px}
 }
@@ -685,8 +715,8 @@ p{text-wrap:pretty}
   .nav{padding:5px 6px 5px 10px}
   .nav-brand{font-size:11px}
   .nav-cta{padding:6px 12px;font-size:10px}
-  .hero-title{font-size:clamp(44px,13.5vw,68px)}
-  .hero-mademoiselle{font-size:clamp(180px,52vw,260px)}
+  .hero-title{font-size:clamp(54px,16.5vw,80px)}
+  .hero-mademoiselle{font-size:clamp(86px,24vw,120px)}
   .atelier-meta-row{flex:1 1 100%}
 }
 @media (prefers-reduced-motion:reduce){
