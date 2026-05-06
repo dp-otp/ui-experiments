@@ -1,0 +1,17 @@
+# Playwright + Claude artifacts
+.playwright-mcp/
+.claude/
+
+# Test screenshots
+atelier-*.png
+page-*.png
+*.tmp
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editor
+*.swp
+.vscode/

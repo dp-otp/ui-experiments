@@ -1,0 +1,22 @@
+::1 - - [05/May/2026 02:15:37] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:15:37] code 404, message File not found
+::1 - - [05/May/2026 02:15:37] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [05/May/2026 02:17:00] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:23:52] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:28:40] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:30:06] "GET /index.html HTTP/1.1" 304 -
+::1 - - [05/May/2026 02:35:50] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:36:07] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:37:39] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:42:15] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:47:02] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:48:18] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:49:45] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:49:55] "GET /index.html HTTP/1.1" 304 -
+::1 - - [05/May/2026 02:50:08] "GET /index.html HTTP/1.1" 304 -
+::1 - - [05/May/2026 02:51:50] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:55:05] "GET /index.html HTTP/1.1" 200 -
+::1 - - [05/May/2026 02:58:15] "GET /index.html HTTP/1.1" 304 -
+127.0.0.1 - - [05/May/2026 22:13:05] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [05/May/2026 22:13:06] code 404, message File not found
+127.0.0.1 - - [05/May/2026 22:13:06] "GET /favicon.ico HTTP/1.1" 404 -
