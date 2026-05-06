@@ -584,11 +584,10 @@ p{text-wrap:pretty}
 }
 @media (max-width:640px){
   :root{--pad-section:16px;--gutter-xl:60px}
-  /* Sticky pill nav — fit inside viewport, drop the brand wordmark */
-  .nav{top:10px;left:8px;right:8px;transform:none;width:auto;gap:6px;padding:6px 6px 6px 12px;border-radius:999px}
+  /* Sticky pill nav — fit inside viewport, drop the ENTER CTA on mobile */
+  .nav{top:10px;left:8px;right:8px;transform:none;width:auto;gap:6px;padding:8px 14px;border-radius:999px;justify-content:center}
   .nav-brand{font-size:13px;letter-spacing:.06em}
-  .nav-link{display:none}
-  .nav-cta{padding:8px 14px;font-size:11px}
+  .nav-link,.nav-cta{display:none}
   /* Hero — short card, sandwich layout, no clipping */
   .hero{padding:64px 12px 24px}
   .hero::before{inset:40px 12px}
@@ -636,21 +635,22 @@ p{text-wrap:pretty}
   .atelier-meta-row{flex:1 1 calc(50% - 6px);min-width:0;padding-top:8px}
   .atelier-meta-row .k{font-size:9px;letter-spacing:.22em}
   .atelier-meta-row .v{font-size:14px}
-  /* Statement (Inheritance Clause) */
-  .statement-cc{padding:80px 16px}
-  .statement-cc h2{font-size:clamp(64px,22vw,120px);width:100%;margin-left:0;transform:none}
+  /* Statement (Inheritance Clause) — INHERITED. fits viewport on a single line */
+  .statement-cc{padding:64px 16px;overflow:hidden}
+  .statement-cc h2{font-size:clamp(32px,10vw,52px);width:100%;max-width:100%;margin-left:0;transform:none;white-space:nowrap;letter-spacing:-.02em}
   .statement-cc-eyebrow{font-size:10px}
   .statement-cc-sub{font-size:14px}
-  /* GB / Archive — clean stack with M+R as subtle decorative bg, properly bounded */
+  /* GB / Archive — preserve desktop's dramatic outlined-script M+R bleeding off corners */
   .gb{padding:60px 16px;overflow:hidden;display:block}
-  .gb-bay{padding:32px 0}
+  .gb-bay{padding:32px 0;position:relative}
   .gb-bay + .gb-bay{margin-top:0}
-  .gb-letter{font-size:clamp(160px,42vw,240px);line-height:.78;-webkit-text-stroke-width:2px;color:rgba(15,15,15,.10);position:absolute;pointer-events:none}
-  .gb-letter-g{top:-30px;right:-8%;left:auto;transform:none;transform-origin:bottom right;-webkit-text-stroke:2px var(--obsidian);color:transparent}
-  .gb-letter-b{bottom:-30px;left:-8%;right:auto;transform:none;transform-origin:top left;-webkit-text-stroke:2px var(--obsidian);color:transparent}
-  .gb-c{min-height:280px;padding:60px 0;position:relative;display:flex;align-items:center;justify-content:center}
-  .gb-c-pill{position:relative;left:auto;transform:none;font-size:11px;padding:10px 18px;display:inline-flex;align-self:center}
-  .gb-c-r{position:absolute;bottom:8px;right:0;font-size:11px}
+  /* M (gb-letter-g) and R (gb-letter-b) — outlined script bleeding off corners, mobile-sized */
+  .gb-letter{font-size:clamp(200px,62vw,300px);line-height:.78;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:2px var(--obsidian);position:absolute;pointer-events:none;z-index:0}
+  .gb-letter-g{top:-15%;bottom:auto;left:auto;right:-15%;transform:none;transform-origin:top right}
+  .gb-letter-b{bottom:-15%;top:auto;right:auto;left:-15%;transform:none;transform-origin:bottom left}
+  .gb-c{min-height:340px;padding:60px 0 60px;position:relative;display:flex;align-items:center;justify-content:center;overflow:visible}
+  .gb-c-pill{position:relative;left:auto;transform:none;font-size:11px;padding:10px 18px;display:inline-flex;align-self:center;z-index:3}
+  .gb-c-r{position:absolute;bottom:8px;right:0;font-size:11px;z-index:3}
   .gb-numeral{font-size:clamp(180px,60vw,360px)}
   .gb-c-piece{width:70%}
   .gb-stat{margin-top:18px}
@@ -661,11 +661,10 @@ p{text-wrap:pretty}
   .gb-bottom{font-size:18px;line-height:1.25}
   .gb-r{min-height:auto;padding-top:32px;text-align:left;align-items:flex-start}
   .gb-r-tabs{justify-content:flex-start;gap:18px;font-size:9.5px}
-  .gb-r-thumb{width:160px;height:160px;margin:24px 0}
-  .gb-r-arrows{margin:-92px 0 0;font-size:16px}
-  .gb-r-thumb-cap{font-size:12px}
-  .gb-r-stars{justify-content:flex-start;margin:24px 0}
-  .gb-r-bottom{font-size:22px;line-height:1.15}
+  /* Kill the DM-04 specimen spinner on mobile */
+  .gb-r-thumb,.gb-r-arrows,.gb-r-thumb-cap{display:none}
+  .gb-r-stars{justify-content:flex-start;margin:32px 0}
+  .gb-r-bottom{font-size:22px;line-height:1.15;margin-top:32px}
   .gb-r-bottom + p{font-size:12px}
   /* Veil */
   .veil{padding:60px 16px}
